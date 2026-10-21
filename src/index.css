@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-deepNavy: #1a2936;
+  --color-brand-navy: #243647;
+  --color-brand-navyLight: #324b61;
+  --color-brand-goldPale: #f5ebe0;
+  --color-brand-goldLight: #e4caa8;
+  --color-brand-gold: #c99a67;
+  --color-brand-goldDark: #a37544;
+  --color-brand-warmBg: #fcfaf6;
+  --color-brand-sandBg: #f5f0e6;
+  --color-brand-slateBorder: #dfd7c8;
+  --color-brand-charcoal: #222831;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-warmBg);
+    color: var(--color-brand-navy);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #a37544 0%, #c99a67 50%, #8c5d2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(26, 41, 54, 0.08);
+}
+
+/* Custom horizontal smooth scrollbar */
+.horizontal-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #c99a67 transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: rgba(223, 215, 200, 0.35);
+  border-radius: 9999px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: #c99a67;
+  border-radius: 9999px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a37544;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
